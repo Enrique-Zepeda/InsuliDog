@@ -2,15 +2,17 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { PATHS } from "./paths";
 
 // Layouts & Guards
-import { AppLayout } from "@/components/layout/AppLayout";
-import { AuthLayout } from "@/components/layout/AuthLayout";
+import { AppLayout } from "@/app/layout/AppLayout";
+import { AuthLayout } from "@/app/layout/AuthLayout";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { PublicRoute } from "./PublicRoute";
-
-// Features (Pantallas)
 import { Login } from "@/features/auth/pages/LoginPage";
 import { Register } from "@/features/auth/pages/RegisterPage";
-import { Home } from "@/features/auth/home/pages/HomePage";
+import { ForgotPassword } from "@/features/auth/pages/ForgotPasswordPage";
+import { ResetPassword } from "@/features/auth/pages/ResetPasswordPage";
+import { Home } from "@/features/dashboard/pages/HomePage";
+
+// Features (Pantallas)
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ export const router = createBrowserRouter([
           { path: PATHS.REGISTER, element: <Register /> },
         ],
       },
+    ],
+  },
+
+  {
+    element: <AuthLayout />,
+    children: [
+      { path: PATHS.FORGOT_PASSWORD, element: <ForgotPassword /> },
+      { path: PATHS.RESET_PASSWORD, element: <ResetPassword /> },
     ],
   },
 
