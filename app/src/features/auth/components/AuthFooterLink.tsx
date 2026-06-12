@@ -8,9 +8,9 @@ type AuthFooterLinkProps = {
 
 export function AuthFooterLink({ text, linkText, to }: AuthFooterLinkProps) {
   return (
-    <p className="mt-6 text-center text-sm text-zinc-500">
+    <p className="mt-6 text-center text-sm text-muted-foreground">
       {text}{" "}
-      <Link to={to} className="font-medium text-zinc-900">
+      <Link to={to} className="font-medium text-primary hover:underline">
         {linkText}
       </Link>
     </p>

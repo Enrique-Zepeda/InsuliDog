@@ -1,8 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
 import { logoutWithSupabase } from "@/features/auth/services/authService";
 import { getThunkErrorMessage } from "@/features/auth/utils/getThunkErrorMessage";
-import type { AuthMessageResponse } from "../types/auth.types";
+import type { AuthMessageResponse } from "@/features/auth/types/auth.types";
 
 export const logoutUser = createAsyncThunk<AuthMessageResponse, void, { rejectValue: string }>(
   "auth/logoutUser",

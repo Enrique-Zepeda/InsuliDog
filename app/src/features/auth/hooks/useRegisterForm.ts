@@ -6,7 +6,7 @@ import { PATHS } from "@/app/router/paths";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { clearAuthFeedback } from "@/features/auth/slices/authSlice";
 import { registerSchema, type RegisterFormValues } from "@/features/auth/schemas/registerSchema";
-import { registerUser } from "../thunks";
+import { registerUser } from "@/features/auth/thunks";
 
 export function useRegisterForm() {
   const dispatch = useAppDispatch();

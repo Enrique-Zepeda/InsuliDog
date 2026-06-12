@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { updatePassword } from "@/features/auth/services/authService";
-import { getThunkErrorMessage } from "../utils/getThunkErrorMessage";
-import type { AuthMessageResponse, UpdatePasswordCredentials } from "../types/auth.types";
+import { getThunkErrorMessage } from "@/features/auth/utils/getThunkErrorMessage";
+import type { AuthMessageResponse, UpdatePasswordCredentials } from "@/features/auth/types/auth.types";
 
 export const resetPassword = createAsyncThunk<AuthMessageResponse, UpdatePasswordCredentials, { rejectValue: string }>(
   "auth/resetPassword",

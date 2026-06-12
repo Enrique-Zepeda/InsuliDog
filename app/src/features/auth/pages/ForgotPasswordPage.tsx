@@ -1,8 +1,6 @@
 import { PATHS } from "@/app/router/paths";
 import { Button } from "@/components/ui/button";
-import { AuthCard } from "@/features/auth/components/AuthCard";
-import { AuthFooterLink } from "@/features/auth/components/AuthFooterLink";
-import { AuthTextField } from "@/features/auth/components/AuthTextField";
+import { AuthAlert, AuthCard, AuthFooterLink, AuthTextField } from "@/features/auth/components";
 import { useForgotPasswordForm } from "@/features/auth/hooks/useForgotPasswordForm";
 
 export function ForgotPassword() {
@@ -28,9 +26,9 @@ export function ForgotPassword() {
           error={errors.email}
         />
 
-        {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
+        <AuthAlert message={error} variant="error" />
 
-        {successMessage && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">{successMessage}</p>}
+        <AuthAlert message={successMessage} variant="success" />
 
         <Button type="submit" className="w-full" disabled={isLoading}>
           {isLoading ? "Enviando correo..." : "Enviar link de recuperación"}

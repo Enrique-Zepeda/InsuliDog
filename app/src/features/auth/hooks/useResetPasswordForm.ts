@@ -6,7 +6,7 @@ import { PATHS } from "@/app/router/paths";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { clearAuthFeedback } from "@/features/auth/slices/authSlice";
 import { resetPasswordSchema, type ResetPasswordFormValues } from "@/features/auth/schemas/resetPasswordSchema";
-import { resetPassword } from "../thunks";
+import { resetPassword } from "@/features/auth/thunks";
 
 export function useResetPasswordForm() {
   const dispatch = useAppDispatch();
