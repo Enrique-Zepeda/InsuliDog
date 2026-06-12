@@ -2,14 +2,10 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { PATHS } from "./paths";
 
 // Layouts & Guards
-import { AppLayout } from "@/app/layout/AppLayout";
-import { AuthLayout } from "@/app/layout/AuthLayout";
+import { AppLayout, AuthLayout } from "@/app/layout";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { PublicRoute } from "./PublicRoute";
-import { Login } from "@/features/auth/pages/LoginPage";
-import { Register } from "@/features/auth/pages/RegisterPage";
-import { ForgotPassword } from "@/features/auth/pages/ForgotPasswordPage";
-import { ResetPassword } from "@/features/auth/pages/ResetPasswordPage";
+import { Login, ForgotPassword, Register, ResetPassword } from "@/features/auth/pages";
 import { Home } from "@/features/dashboard/pages/HomePage";
 
 // Features (Pantallas)

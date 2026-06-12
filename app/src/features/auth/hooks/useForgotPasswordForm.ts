@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { clearAuthFeedback } from "@/features/auth/slices/authSlice";
 import { forgotPasswordSchema, type ForgotPasswordFormValues } from "@/features/auth/schemas/forgotPasswordSchema";
-import { forgotPassword } from "../thunks";
+import { forgotPassword } from "@/features/auth/thunks";
 
 export function useForgotPasswordForm() {
   const dispatch = useAppDispatch();

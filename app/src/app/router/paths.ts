@@ -10,3 +10,21 @@ export const PATHS = {
   PROFILE: "/profile",
   HISTORY: "/history",
 };
+
+export const MAIN_NAV_ITEMS = [
+  {
+    label: "Inicio",
+    to: PATHS.HOME,
+    icon: "🏠",
+  },
+  {
+    label: "Perfil",
+    to: PATHS.PROFILE,
+    icon: "🐶",
+  },
+  {
+    label: "Historial",
+    to: PATHS.HISTORY,
+    icon: "📋",
+  },
+] as const;

@@ -6,7 +6,7 @@ import { PATHS } from "@/app/router/paths";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { clearAuthFeedback } from "@/features/auth/slices/authSlice";
 import { loginSchema, type LoginFormValues } from "@/features/auth/schemas/loginSchema";
-import { loginUser } from "../thunks";
+import { loginUser } from "@/features/auth/thunks";
 
 export function useLoginForm() {
   const dispatch = useAppDispatch();

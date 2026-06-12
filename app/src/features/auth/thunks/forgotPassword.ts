@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { sendPasswordResetEmail } from "@/features/auth/services/authService";
-import { getThunkErrorMessage } from "../utils/getThunkErrorMessage";
-import type { AuthMessageResponse, ForgotPasswordCredentials } from "../types/auth.types";
+import { getThunkErrorMessage } from "@/features/auth/utils/getThunkErrorMessage";
+import type { AuthMessageResponse, ForgotPasswordCredentials } from "@/features/auth/types/auth.types";
 
 export const forgotPassword = createAsyncThunk<AuthMessageResponse, ForgotPasswordCredentials, { rejectValue: string }>(
   "auth/forgotPassword",

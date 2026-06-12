@@ -1,42 +1,32 @@
 import { NavLink } from "react-router-dom";
-import { PATHS } from "@/app/router/paths";
 import { LogoutButton } from "@/features/auth/components/LogoutButton";
+import { MAIN_NAV_ITEMS } from "@/app/router/paths";
 
 export function Sidebar() {
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-white border-r border-zinc-200">
-      <div className="p-6 border-b border-zinc-200">
-        <h2 className="text-2xl font-bold text-zinc-900">InsuliDog</h2>
+    <aside className="hidden md:flex flex-col w-64 bg-card border-r border-border">
+      <div className="p-6 border-b border-border">
+        <h2 className="text-2xl font-bold text-foreground">InsulinDog</h2>
       </div>
 
       <nav className="flex flex-col gap-2 p-4 flex-1">
-        <NavLink
-          to={PATHS.HOME}
-          className={({ isActive }) =>
-            `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-              isActive
-                ? "bg-zinc-100 text-zinc-950 font-semibold"
-                : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900"
-            }`
-          }
-        >
-          <span className="text-xl">🏠</span>
-          <span>Inicio</span>
-        </NavLink>
+        {MAIN_NAV_ITEMS.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                isActive
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`
+            }
+          >
+            <span className="text-xl">{item.icon}</span>
+            <span>{item.label}</span>
+          </NavLink>
+        ))}
 
-        <NavLink
-          to={PATHS.PROFILE}
-          className={({ isActive }) =>
-            `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-              isActive
-                ? "bg-zinc-100 text-zinc-950 font-semibold"
-                : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900"
-            }`
-          }
-        >
-          <span className="text-xl">🐶</span>
-          <span>Perfil</span>
-        </NavLink>
         <LogoutButton variant="ghost">Salir</LogoutButton>
       </nav>
     </aside>

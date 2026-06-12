@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-
 import { PATHS } from "@/app/router/paths";
 import { Button } from "@/components/ui/button";
-import { AuthCard } from "@/features/auth/components/AuthCard";
-import { AuthFooterLink } from "@/features/auth/components/AuthFooterLink";
-import { AuthTextField } from "@/features/auth/components/AuthTextField";
+import { AuthAlert, AuthCard, AuthFooterLink, AuthTextField } from "@/features/auth/components";
 import { useLoginForm } from "@/features/auth/hooks/useLoginForm";
 
 export function Login() {
@@ -37,12 +34,12 @@ export function Login() {
         />
 
         <div className="text-right">
-          <Link to={PATHS.FORGOT_PASSWORD} className="text-sm font-medium text-zinc-900">
+          <Link to={PATHS.FORGOT_PASSWORD} className="text-sm font-medium text-primary hover:underline">
             ¿Olvidaste tu contraseña?
           </Link>
         </div>
 
-        {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
+        <AuthAlert message={error} variant="error" />
 
         <Button type="submit" className="w-full" disabled={isLoading}>
           {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
